@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\DEV\Scott Equipment\ScottWatch\ScottWatch\bin\Debug\ScottWatch.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\DEV\Scott Equipment\ScottWatch\ScottWatch\bin\Debug\ScottWatch.InstallLog
+   assemblypath = C:\DEV\Scott Equipment\ScottWatch\ScottWatch\bin\Debug\ScottWatch.exe
+Installing service ScottWatch...
+Service ScottWatch has been successfully installed.
+Creating EventLog source ScottWatch in log Application...
+Committing assembly 'C:\DEV\Scott Equipment\ScottWatch\ScottWatch\bin\Debug\ScottWatch.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\DEV\Scott Equipment\ScottWatch\ScottWatch\bin\Debug\ScottWatch.InstallLog
+   assemblypath = C:\DEV\Scott Equipment\ScottWatch\ScottWatch\bin\Debug\ScottWatch.exe

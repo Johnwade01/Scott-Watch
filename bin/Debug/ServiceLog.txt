@@ -1,0 +1,62 @@
+
+Service Start: 05/03/2018 08:11:02 - Interval:20000
+Service DOWORK  05/03/2018 08:11:22
+CheckDB2 returned 5339 Records 05/03/2018 08:11:44
+Service Stop : 05/03/2018 08:11:56
+Service Start: 05/03/2018 08:45:04 - Interval:20000
+Service DOWORK  05/03/2018 08:45:24
+Service Stop : 05/03/2018 08:46:51
+Service Start: 05/03/2018 09:39:52 - Interval:20000
+Service DOWORK  05/03/2018 09:40:12
+Service Stop : 05/03/2018 09:41:07
+Service Start: 05/03/2018 11:23:27 - Interval:20000
+Service DOWORK  05/03/2018 11:23:47
+CheckDB2 returned  Records 05/03/2018 11:24:22
+Service DOWORK  05/03/2018 11:24:42
+CheckDB2 returned  Records 05/03/2018 11:24:46
+Service Stop : 05/03/2018 11:24:53
+Service Start: 05/03/2018 11:26:01 - Interval:20000
+Service DOWORK  05/03/2018 11:26:21
+CheckDB2 returned  Records 05/03/2018 11:27:17
+Service Stop : 05/03/2018 11:27:20
+Service Start: 05/03/2018 01:07:45 - Interval:20000
+Service DOWORK  05/03/2018 01:08:05
+Service Work Error: 05/03/2018 01:09:07Unable to cast object of type 'System.Decimal' to type 'System.String'.
+CheckForNewData returned ERROR Records 05/03/2018 01:09:07
+Service Stop : 05/03/2018 01:09:12
+Service Start: 05/03/2018 01:10:07 - Interval:20000
+Service DOWORK  05/03/2018 01:10:27
+CheckForNewData returned  Records 05/03/2018 01:11:10
+Service Stop : 05/03/2018 01:11:15
+Service Start: 05/03/2018 01:30:01 - Interval:20000
+Service DOWORK  05/03/2018 01:30:21
+CheckForNewData returned  Records 05/03/2018 01:30:57
+Service Stop : 05/03/2018 01:31:00
+Service Start: 05/03/2018 02:31:23 - Interval:20000
+Service Stop : 05/03/2018 02:31:38
+Service Start: 05/03/2018 02:31:55 - Interval:20000
+Service DOWORK  05/03/2018 02:32:15
+CheckForNewData returned  Records 05/03/2018 02:32:39
+Service Stop : 05/03/2018 02:32:44
+Service Start: 05/03/2018 02:34:12 - Interval:20000
+Service DOWORK  05/03/2018 02:34:32
+CheckForNewData returned  Records 05/03/2018 02:35:01
+Service DOWORK  05/03/2018 02:35:21
+CheckForNewData returned  Records 05/03/2018 02:35:36
+Service DOWORK  05/03/2018 02:35:56
+CheckForNewData returned  Records 05/03/2018 02:36:16
+Service Stop : 05/03/2018 02:36:23
+Service Start: 05/03/2018 04:53:27 - Interval:20000
+Service DOWORK  05/03/2018 04:53:47
+CheckForNewData returned  Records 05/03/2018 04:56:06
+Service Stop : 05/03/2018 04:56:10
+Service Start: 05/04/2018 08:11:34 - Interval:20000
+Service DOWORK  05/04/2018 08:11:54
+CheckForNewData returned  Records 05/04/2018 08:12:51
+Service Stop : 05/04/2018 08:12:54
+Service Start: 05/04/2018 08:25:50 - Interval:20000
+Service DOWORK  05/04/2018 08:26:10
+CheckForNewData returned  Records 05/04/2018 08:28:04
+Service Stop : 05/04/2018 08:28:14
+Service Start: 05/04/2018 08:28:17 - Interval:20000
+Service Stop : 05/04/2018 08:28:19
