@@ -30,3 +30,14 @@ E:\Connect-T\DEvArchive\Scott Equipment\ScottKardex\ScottWatch\ScottWatch\obj\De
 E:\Connect-T\DEvArchive\Scott Equipment\ScottKardex\ScottWatch\ScottWatch\obj\Debug\ScottWatch.csproj.CopyComplete
 E:\Connect-T\DEvArchive\Scott Equipment\ScottKardex\ScottWatch\ScottWatch\obj\Debug\ScottWatch.exe
 E:\Connect-T\DEvArchive\Scott Equipment\ScottKardex\ScottWatch\ScottWatch\obj\Debug\ScottWatch.pdb
+C:\DEV\ScottKardex\ScottWatch\obj\Debug\ScottWatch.csprojAssemblyReference.cache
+C:\DEV\ScottKardex\ScottWatch\obj\Debug\ScottWatch.ProjectInstaller.resources
+C:\DEV\ScottKardex\ScottWatch\obj\Debug\ScottWatch.csproj.GenerateResource.cache
+C:\DEV\ScottKardex\ScottWatch\obj\Debug\ScottWatch.csproj.CoreCompileInputs.cache
+C:\DEV\ScottKardex\ScottWatch\obj\Debug\ScottWatch.exe
+C:\DEV\ScottKardex\ScottWatch\obj\Debug\ScottWatch.pdb
+C:\DEV\ScottKardex\ScottWatch\bin\Debug\ScottWatch.exe.config
+C:\DEV\ScottKardex\ScottWatch\bin\Debug\ScottWatch.exe
+C:\DEV\ScottKardex\ScottWatch\bin\Debug\ScottWatch.pdb
+C:\DEV\ScottKardex\ScottWatch\bin\Debug\IBM.Data.DB2.iSeries.xml
+C:\DEV\ScottKardex\ScottWatch\obj\Debug\ScottWatch.csproj.CopyComplete
