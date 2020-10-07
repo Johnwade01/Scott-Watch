@@ -26,6 +26,9 @@ namespace ScottWatch
         public static string dbName = ConfigurationManager.AppSettings["dbName"];  //dbName = "ALTLIB";
         public static string Warehouse = ConfigurationManager.AppSettings["Warehouse"];
 
+        public static string get_branchPickString = ConfigurationManager.AppSettings["get_branchPickString"];
+        public static string get_branchPutString = ConfigurationManager.AppSettings["get_branchPutString"];
+        public static string get_branchPartmasterString = ConfigurationManager.AppSettings["get_branchPartmasterString"];
 
         public static string CheckForNewData()
         {
@@ -159,7 +162,7 @@ namespace ScottWatch
                 {
                     Console.WriteLine("Successfully connected...");
                     //string qry = "SELECT Count(*)  FROM " + dbName + ".SALORD";
-                    string qry = "SELECT * FROM " + dbName + ".PARTMAST Where PMSTA = 'A' and PMBR = 83 and PMBIN = 'KARDEX' order by PMDTA DESC";
+                    string qry = "SELECT * FROM " + dbName + ".PARTMAST Where PMSTA = 'A' and "+ get_branchPartmasterString + "  and PMBIN = 'KARDEX' order by PMDTA DESC";
                     iDB2Command comm = conn.CreateCommand();
                     comm.CommandText = qry;
                     iDB2DataReader reader = comm.ExecuteReader();
@@ -215,7 +218,7 @@ namespace ScottWatch
                 {
                     Console.WriteLine("Successfully connected...");
                     //string qry = "SELECT Count(*)  FROM " + dbName + ".SALORD";
-                    string qry = "SELECT * FROM " + dbName + ".SALORD A, " + dbName + ".SALDET B where A.SO_ORD = B.SD_ORD and B.SD_BIN = 'KARDEX' and A.SO_STA = 'A' and A.SO_BR = 83 and  A.SO_VIA <> '$W/O ADJ$' order by SD_DTM DESC, SD_TMO DESC fetch first 500 rows only ";
+                    string qry = "SELECT * FROM " + dbName + ".SALORD A, " + dbName + ".SALDET B where A.SO_ORD = B.SD_ORD and B.SD_BIN = 'KARDEX' and A.SO_STA = 'A' and "+ get_branchPickString + "  and  A.SO_VIA <> '$W/O ADJ$' order by SD_DTM DESC, SD_TMO DESC fetch first 500 rows only ";
                     //string qry = "SELECT * FROM " + dbName + ".SALORD A, " + dbName + ".SALDET B where A.SO_ORD = B.SD_ORD and B.SD_BIN = 'KARDEX' and A.SO_STA = 'A' and A.SO_BR = 83  order by SO_DTO DESC, SD_TMO DESC fetch first 100 rows only ";
                     iDB2Command comm = conn.CreateCommand();
                     comm.CommandText = qry;
@@ -235,6 +238,7 @@ namespace ScottWatch
                         pick.SD_TMO = reader["SD_TMO"].ToString();
                         pick.SD_BIN = reader["SD_BIN"].ToString();
                         pick.SD_PO = reader["SD_PO"].ToString();
+                        pick.SO_BR = reader["SO_BR"].ToString();
 
                         pickOrders.Add(pick);
                     }
@@ -268,7 +272,7 @@ namespace ScottWatch
                 if (conn != null)
                 {
                     Console.WriteLine("Successfully connected...");
-                    string qry = "SELECT * FROM " + dbName + ".PARTHIST where PHSTA = 'R' and PHBR = 83 and PHDTR  >= '20180424' and PHTYP <> 'MD' order by PH_DTR DESC, PH_TMR DESC fetch first 100 rows only ";
+                    string qry = "SELECT * FROM " + dbName + ".PARTHIST where PHSTA = 'R' and " + get_branchPutString + " and PHDTR  >= '20180424' and PHTYP <> 'MD' order by PH_DTR DESC, PH_TMR DESC fetch first 100 rows only ";
                     iDB2Command comm = conn.CreateCommand();
                     comm.CommandText = qry;
                     iDB2DataReader reader = comm.ExecuteReader();
@@ -283,6 +287,7 @@ namespace ScottWatch
                         put.PH_QTR = reader["PH_QTR"].ToString();
                         put.PH_VEN = reader["PH_VEN"].ToString();
                         put.PH_DTR = reader["PH_DTR"].ToString();
+                        put.PH_BR = reader["PH_BR"].ToString();
 
                         putOrders.Add(put);
                     }
@@ -336,7 +341,8 @@ namespace ScottWatch
                     command.Parameters.AddWithValue("@LineNumber", PickPart[0].SD_LNE);
                     command.Parameters.AddWithValue("@Quantity", numVal.ToString());
                     command.Parameters.AddWithValue("@ImportDate", PickPart[0].SO_DTO);
-                    command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    //command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    command.Parameters.AddWithValue("@Warehouse", PickPart[0].SO_BR);
 
                     try
                     {
@@ -408,7 +414,8 @@ namespace ScottWatch
                     command.Parameters.AddWithValue("@LineNumber", maxlineNumber);
                     command.Parameters.AddWithValue("@Quantity", PutPart[0].PH_QTR);
                     command.Parameters.AddWithValue("@ImportDate", PutPart[0].PH_DTR);
-                    command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    //command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    command.Parameters.AddWithValue("@Warehouse", PutPart[0].PH_BR);
 
                     try
                     {
@@ -456,7 +463,8 @@ namespace ScottWatch
                     Int32.TryParse(PutPart[0].PM_QA, out int PMQA);
                     Int32.TryParse(PutPart[0].PM_QR, out int PMQR);
                     command.Parameters.AddWithValue("@PMNETONHAND", (PMOH - PMQA - PMQR).ToString());
-                    command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    //command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    command.Parameters.AddWithValue("@Warehouse", PutPart[0].PM_BR);
                     command.Parameters.AddWithValue("@PMNET", PutPart[0].PM_NET);
 
 
@@ -504,7 +512,8 @@ namespace ScottWatch
                     Int32.TryParse(PutPart[0].PM_QA, out int PMQA);
                     Int32.TryParse(PutPart[0].PM_QR, out int PMQR);
                     command.Parameters.AddWithValue("@PMNETONHAND", (PMOH - PMQA - PMQR).ToString());
-                    command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    //command.Parameters.AddWithValue("@Warehouse", Warehouse);
+                    command.Parameters.AddWithValue("@Warehouse", PutPart[0].PM_BR);
                     command.Parameters.AddWithValue("@PMNET", PutPart[0].PM_NET);
 
                     try

@@ -19,6 +19,8 @@ namespace ScottWatch.Models
         public string PM_NET { get; set; }
         public string NetOnHand { get; set; }
 
+        public string PM_BR { get; set; }
+
     }
 
     public class PutOrders
@@ -28,6 +30,7 @@ namespace ScottWatch.Models
         public string PH_QTR { get; set; }
         public string PH_VEN { get; set; }
         public string PH_DTR { get; set; }
+        public string PH_BR { get; set; }
 
     }
 
@@ -41,6 +44,7 @@ namespace ScottWatch.Models
         public string SO_DTO { get; set; }
         public string SD_TMO { get; set; }
         public string SD_PO { get; set; }
+        public string SO_BR { get; set; }
 
 
     }
